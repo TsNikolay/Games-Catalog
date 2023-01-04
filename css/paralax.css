@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+ --index: calc(1vw + 1vh);
+ --transition: transform .75s cubic-bezier(.075, .5, 0, 1);
+}
+
+@font-face {
+    font-family: raleway_f;
+    src: url(../fonts/raleway-black.woff2);
+}
+
+body {
+    background-color: black;
+    color:bisque;
+    font-family: raleway_f, sens-serif;
+}
+
+.main-header {
+ position: relative;
+}
+
+.main-header::after{
+    content: '';
+    position:absolute;
+    z-index: 100;
+    width: 100%;
+    height:calc(var(--index)*10);
+    background-image: url(../images/ground.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: calc(var(--index)*-5);
+   
+
+}
+
+.layers {
+ height: 115vh;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ text-align: center;
+ overflow: hidden;
+ position: relative;
+}
+
+.layer {
+    height: 100%;
+    width: 100%;
+    position:absolute;
+    background-size:cover;
+    background-position: center;
+    will-change: transform;
+    transition: var(--transition);
+}
+
+.main-article {
+	min-height: 100vh;
+	background-size: cover;
+	background-position: center;
+	color: var(--text);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	text-align: center;
+}
+
+.back1 {
+    transform: translate3d(0, calc(var(--scrollTop)/2.5), 0);
+}
+
+.back2 {
+    transform: translate3d(0, calc(var(--scrollTop)/4), 0);
+}
+
+.back3 {
+    transform: translate3d(0, calc(var(--scrollTop)/2), 0);
+    background-size: calc(var(--index)*60);
+    background-repeat: no-repeat;
+}
+
+.back4 {
+    transform: translate3d(0, calc(var(--scrollTop)/5), 0);
+}
+
+.gamesImage {
+    width: calc(var(--index)*15);
+    margin: calc(var(--index));
+    border-radius: 35%;
+}
+
+.main-article-header{
+    color: white;
+    font-size: calc(var(--index)*3);
+    
+}
+
+.images{
+    display: flex;
+}
